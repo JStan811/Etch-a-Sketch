@@ -8,14 +8,21 @@ html, body {
     height: 100%;
 }
 
-.container {
-    height: 100%;
-    background: #ebccff;
+button {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(4, 1fr);
+    margin: auto;
+}
+
+.container {
+    display: grid;
+    margin: auto;
+    width: 600px;
+    height: 600px;
+    background: #ebccff;
+    grid-template-columns: repeat(16, 1fr);
+    grid-template-rows: repeat(16, 1fr);
 }
 
 div {
-    border: 2px solid black;
+    border: 1px solid white;
 }
