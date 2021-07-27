@@ -6,6 +6,7 @@ created: 7/27/2021
 
 html, body {
     height: 100%;
+    background: #ededed;
 }
 
 button {
@@ -19,8 +20,7 @@ button {
     width: 600px;
     height: 600px;
     background: #ebccff;
-    grid-template-columns: repeat(16, 1fr);
-    grid-template-rows: repeat(16, 1fr);
+    border: 1px solid #ededed;
 }
 
 div {
