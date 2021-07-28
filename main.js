@@ -6,7 +6,7 @@ created: 7/27/2021
 
 const container = document.querySelector('.container');
 
-//change color function to be used by event listener
+// change color function to be used by event listener
 function changeColor(e) {
     this.style.backgroundColor = '#757575';
 }
@@ -19,7 +19,15 @@ function addCell() {
     container.appendChild(gridCell);
 }
 
+//function to remove existing cells before creating new ones
+function removeCells () {
+    while (container.firstChild) {
+        container.removeChild(container.firstChild);
+      }
+}
+
 function setGrid(squaresPerSide) {
+    removeCells();
     let totalSquares = squaresPerSide * squaresPerSide;
     for(i = 1; i <= totalSquares; i++) {
         addCell();
@@ -27,8 +35,6 @@ function setGrid(squaresPerSide) {
     container.style['grid-template-columns'] = `repeat(${squaresPerSide}, 1fr)`;
     container.style['grid-template-rows'] = `repeat(${squaresPerSide}, 1fr)`;
 }
-
-//create 256 (16x16) divs and place inside "container" div
 
 setGrid(16);
 
@@ -49,7 +55,6 @@ function changeGrid(e) {
             alert("Please enter an integer greater than 0.");
             continue;
         }
-        console.log(userInput);
         break;
     }
 
@@ -57,3 +62,34 @@ function changeGrid(e) {
 }
 
 btn.addEventListener("click", changeGrid);
+
+
+/* Code below is for the Optional step 5 of the project
+------------------------------------------------------------------------------------------------------
+First part, "have each pass through with the mouse change it to a completely random RGB value.":
+
+//random color generator taken from https://css-tricks.com/snippets/javascript/random-hex-color/
+function randomColor() {
+    return Math.floor(Math.random()*16777215).toString(16);
+}
+
+//change color function from above (line 10), but using random color instead
+function changeColor(e) {
+    this.style.backgroundColor = '#' + randomColor();
+}
+------------------------------------------------------------------------------------------------------
+Second part, "try having each pass just add another 10% of black to it so that only after 
+        10 passes is the square completely black."
+        **This doesn't work! Couldn't figure it out :(
+
+//first change the grid color to all white
+container.style.backgroundColor = 'white';
+
+//change color function from above (line 10), but instead decreasing lightness by 10%
+function changeColor(e) {
+    let currentOpacity = this.style.opacity;
+    console.log(currentOpacity);
+    this.style.opacity = currentOpacity + 0.1;
+}
+
+*/
