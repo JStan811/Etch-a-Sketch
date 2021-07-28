@@ -1,5 +1,7 @@
 This is the third project in The Odin Project's Foundations curriculum. The objective is to "build a browser version of something between a sketchpad and an Etch-A-Sketch."
 
+Live Preview: https://jstan811.github.io/Etch-a-Sketch/
+
 Skills demonstrated:
   - Use CSS Grid
   - Create element that dynamically changes based on a user's input
